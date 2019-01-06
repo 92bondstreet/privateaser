@@ -1,6 +1,13 @@
 .PHONY: slides
 .SILENT: build
 
+alias: ## alias to esilv-privateaser.now.sh
+	now alias $(filter-out $@,$(MAKECMDGOALS)) esilv-privateaser
+
+build-slides: ## build reveal slides to deploy
+	reveal-md slides/WORKSHOP.md --css slides/reveal.css --template slides/reveal.html --static dist
+	now dist -n esilv
+
 slides: ## start reveal on localhost
 	reveal-md slides/WORKSHOP.md --css slides/reveal.css --template slides/reveal.html -w
 
