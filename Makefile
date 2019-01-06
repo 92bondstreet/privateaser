@@ -2,7 +2,7 @@
 .SILENT: build
 
 slides: ## start reveal on localhost
-	reveal-md slides/WORKSHOP.md --css slides/reveal.css -w
+	reveal-md slides/WORKSHOP.md --css slides/reveal.css --template slides/reveal.html -w
 
 help: ## This help dialog.
 	@IFS=$$'\n' ; \
