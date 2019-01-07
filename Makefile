@@ -4,7 +4,7 @@
 alias: ## alias to esilv-privateaser.now.sh
 	now alias $(filter-out $@,$(MAKECMDGOALS)) esilv-privateaser
 
-build-slides: ## build reveal slides to deploy
+deploy: ## build and deploy reveal slides
 	reveal-md slides/WORKSHOP.md --css slides/reveal.css --template slides/reveal.html --static dist
 	now dist -n esilv
 
